@@ -1,6 +1,6 @@
 // API service for interacting with the backend
 // Using relative URL to work with the Vite proxy
-const API_URL = '/api';
+const API_URL = 'https://sajid-nodejs-backend-dgb9gce2ctbafhb8.ukwest-01.azurewebsites.net/api';
 
 //const API_URL = 'http://localhost:5000/api';
 
