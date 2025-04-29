@@ -1,0 +1,14 @@
+{
+    "routes": [
+      {
+        "route": "/api/*",
+        "methods": ["GET", "POST", "PUT", "DELETE"],  
+        "rewrite": "sajid-nodejs-backend-dgb9gce2ctbafhb8.ukwest-01.azurewebsites.net/api/$1"
+      }
+    ],
+    "responseOverrides": {
+      "404": {
+        "rewrite": "/index.html"  
+      }
+    }
+  }

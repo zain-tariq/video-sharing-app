@@ -1,0 +1,26 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+# Step 3: Install & build with error logging (updated to check 'dist' instead of 'build')
+- script: |
+    cd frontend
+    echo "Installing dependencies..."
+    npm install --verbose || exit $?
+    echo "Running build..."
+    npm run build || exit $?
+    echo "Build completed. Contents of DIST folder (not build):"
+    ls -la dist/  # Changed from 'build/' to 'dist/'
+    npm run start
+  displayName: 'Build Frontend (with error handling)'
